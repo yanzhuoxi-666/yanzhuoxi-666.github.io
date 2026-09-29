@@ -19,9 +19,9 @@ const songs = [
 
     {
 
-        title: "Don't Look Back In Anger",
+        title: "California",
 
-        artist: "OASIS",
+        artist: "Lana Del Rey",
 
         audio: "audio/2.mp3",
 
