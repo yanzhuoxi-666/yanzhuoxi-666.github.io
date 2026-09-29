@@ -19,13 +19,15 @@ const songs = [
 
     {
 
-        title: "第二首",
+        title: "Don't Look Back In Anger",
 
-        artist: "你的名字",
+        artist: "OASIS",
 
-        audio: "audio/song2.mp3",
+        audio: "audio/2.mp3",
 
-        cover: "cover/song2.jpg"
+        cover: "cover/fm2.png",
+        
+        lyric: "lyric/2.lrc"
       
 
     }
