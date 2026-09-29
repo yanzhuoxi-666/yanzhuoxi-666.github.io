@@ -271,44 +271,33 @@ progress.addEventListener("input",()=>{
     }
 
 });
-audio.addEventListener("timeupdate",()=>{
+let currentActiveIndex = -1;
 
-    if(!lyricData.length) return;
+audio.addEventListener("timeupdate", () => {
+    if (!lyricData.length) return;
 
-    const ps = lyricBox.querySelectorAll("p");
-
-    for(let i=0;i<lyricData.length;i++){
-
-        if(
-
-            audio.currentTime>=lyricData[i].time &&
-
-            (
-
-                i==lyricData.length-1 ||
-
-                audio.currentTime<lyricData[i+1].time
-
-            )
-
-        ){
-
-            ps.forEach(p=>p.classList.remove("active"));
-
-            ps[i].classList.add("active");
-
-            ps[i].scrollIntoView({
-
-                behavior:"smooth",
-
-                block:"center"
-
-            });
-
+    let index = -1;
+    for (let i = 0; i < lyricData.length; i++) {
+        if (
+            audio.currentTime >= lyricData[i].time &&
+            (i === lyricData.length - 1 || audio.currentTime < lyricData[i + 1].time)
+        ) {
+            index = i;
             break;
-
         }
-
     }
 
+    // 只有在歌词行切换时才更新，防止频繁触发 scrollIntoView 导致无法手动滚动
+    if (index !== -1 && index !== currentActiveIndex) {
+        currentActiveIndex = index;
+        const ps = lyricBox.querySelectorAll("p");
+        ps.forEach(p => p.classList.remove("active"));
+        if (ps[index]) {
+            ps[index].classList.add("active");
+            ps[index].scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+    }
 });
