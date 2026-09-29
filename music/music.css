@@ -47,20 +47,20 @@ body{
    主容器
 ========================= */
 
-.player{
+/* 播放器双列布局：左侧封面/控制，右侧歌词 */
+.player {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 700px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右各占一半，也可以写成 450px 1fr */
+    gap: 30px;
+}
 
-    width:(1400px，95%);
-
-    height:780px;
-
-    margin:40px auto;
-
-    display:grid;
-
-    grid-template-columns:280px 1fr 320px;
-
-    gap:25px;
-
+/* 隐藏播放列表容器 */
+.playlist {
+    display: none !important;
 }
 
 /* =========================
@@ -203,18 +203,21 @@ body{
 
     width:100%;
 
-    max-width:1500px;
+    max-width:1200px;
 
-    min-height:780px;
+    min-height:700px;
 
     margin:40px auto;
 
     display:grid;
 
-    grid-template-columns:1fr 2fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:30px;
 
+}
+.playlist {
+    display: none !important;
 }
 #lyric{
 

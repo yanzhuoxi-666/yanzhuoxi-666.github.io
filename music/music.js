@@ -6,13 +6,13 @@ const songs = [
 
     {
 
-        title: "第一首",
+        title: "月が綺麗ねと言われたい！",
 
-        artist: "忘了",
+        artist: "柿崎ユウタ",
 
         audio: "audio/1.mp3",
 
-        cover: "cover/10.png",
+        cover: "cover/fm1.png",
         
         lyric: "lyric/1.lrc"
     },
