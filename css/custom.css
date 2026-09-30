@@ -1,0 +1,45 @@
+/* 所有卡片 */
+.card-widget,
+.recent-post-item {
+    border-radius: 20px;
+    transition: all .35s ease;
+    overflow: hidden;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid rgba(255,255,255,.5);
+}
+
+/* 鼠标经过 */
+
+.card-widget:hover,
+.recent-post-item:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.18);
+}
+
+#card-info-btn{
+
+    border-radius:999px;
+
+    transition:.35s;
+
+    background:linear-gradient(
+        135deg,
+        #4ecdc4,
+        #5c7cfa
+    );
+}
+
+#card-info-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(92,124,250,.4);
+}
